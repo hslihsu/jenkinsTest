@@ -53,5 +53,15 @@ pipeline {
                 }
             }
         }
+        stage('Telnet Test') {
+            steps {
+                script {
+                    // 使用 sh 步驟來執行 telnet 命令
+                    sh '''
+                    telnet 10.10.10.51 3268
+                    '''
+                }
+            }
+        }
     }
 }
